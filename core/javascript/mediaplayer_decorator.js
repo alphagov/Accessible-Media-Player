@@ -481,7 +481,7 @@ window.NOMENSA.player.MediaplayerDecorator.prototype.insertCaption = function(ca
     // We're only adding one class to the captions div
     // Use the native js version for speed
     $c[0].className = 'caption';
-    this.$html.find('.video').prepend($c);
+    this.$html.find('.video').append($c);
   }
 };
 /*
