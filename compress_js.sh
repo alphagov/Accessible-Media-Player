@@ -45,15 +45,15 @@ printf "${SWFOBJECT}\n${YOUTUBE_PLAYER}\n${DECORATOR}\n"
 # Add any sent players
 while [ "$1" != "" ]; do
   case $1 in
-    h )               
+    h )
       usage
       exit 1
       ;;
-    "jwplayer" )      
+    "jwplayer" )
       cat ${JWPLAYER} ${JWPLAYER_CONFIG} >> $COMBINED
       printf "${JWPLAYER}\n${JWPLAYER_CONFIG}\n"
-      ;;			
-    "vimeo" )         
+      ;;
+    "vimeo" )
       cat ${VIMEO_PLAYER} >> $COMBINED
       printf "${VIMEO_PLAYER}\n"
       ;;
