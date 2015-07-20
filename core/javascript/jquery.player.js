@@ -347,6 +347,7 @@ var html5_methods = {
 							$container.attr('id'), $self.config.flashWidth,
 							$self.config.flashHeight, "9.0.115", null, flashvars, params, atts, $self.config.swfCallback);
 					// Dirty hack to remove element from tab index for versions of firefox that trap focus in flash
+					// https://bugzilla.mozilla.org/show_bug.cgi?id=78414
 					if(isFirefox()){
 							$self.$html.find('object').attr("tabindex", '-1');
 						}
