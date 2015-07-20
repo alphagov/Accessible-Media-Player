@@ -22,6 +22,7 @@ ANSI_YELLOW="\033[33m"
 ANSI_RESET="\033[0m"
 
 HEADER="./build/header.txt"
+BROWSER="./core/javascript/jquery.browser.js"
 PLUGIN="./core/javascript/jquery.player.js"
 DECORATOR="./core/javascript/mediaplayer_decorator.js"
 SWFOBJECT="./core/javascript/swfobject/swfobject.js"
@@ -39,8 +40,8 @@ trap "rm -f ${COMBINED}; rm -f ${COMPRESSED}; exit 1" INT TERM EXIT
 printf "\nCompressing\n\n"
 printf "%b${ANSI_GREEN}"
 
-cat ${SWFOBJECT} ${YOUTUBE_PLAYER} ${DECORATOR} > $COMBINED
-printf "${SWFOBJECT}\n${YOUTUBE_PLAYER}\n${DECORATOR}\n"
+cat ${SWFOBJECT} ${BROWSER} ${YOUTUBE_PLAYER} ${DECORATOR} > $COMBINED
+printf "${SWFOBJECT}\n${BROWSER}\n${YOUTUBE_PLAYER}\n${DECORATOR}\n"
 
 # Add any sent players
 while [ "$1" != "" ]; do
