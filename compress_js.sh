@@ -22,7 +22,7 @@ ANSI_YELLOW="\033[33m"
 ANSI_RESET="\033[0m"
 
 HEADER="./build/header.txt"
-BROWSER="./core/javascript/jquery.browser.js"
+BROWSER="./core/javascript/browser.js"
 PLUGIN="./core/javascript/jquery.player.js"
 DECORATOR="./core/javascript/mediaplayer_decorator.js"
 SWFOBJECT="./core/javascript/swfobject/swfobject.js"
