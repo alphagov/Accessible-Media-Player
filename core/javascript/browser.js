@@ -7,10 +7,12 @@
 
   var matched, browser, uaMatch;
 
-  uaMatch = function( ua ) {
+  window.NOMENSA.uaMatch = function( ua ) {
     ua = ua.toLowerCase();
 
-    var match = /(msie) ([\w.]+)/.exec( ua ) ||
+    var match = /(webkit)[ \/]([\w.]+)/.exec( ua ) ||
+      /(opera)(?:.*version|)[ \/]([\w.]+)/.exec( ua ) ||
+      /(msie) ([\w.]+)/.exec( ua ) ||
       ua.indexOf("compatible") < 0 && /(mozilla)(?:.*? rv:([\w.]+)|)/.exec( ua ) ||
       [];
 
@@ -20,7 +22,7 @@
     };
   };
 
-  matched = uaMatch( window.navigator.userAgent );
+  matched = window.NOMENSA.uaMatch( window.navigator.userAgent );
   browser = {};
 
   if ( matched.browser ) {
