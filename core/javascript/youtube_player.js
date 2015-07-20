@@ -251,7 +251,7 @@ window.NOMENSA.player.YoutubePlayer.prototype = {
                          "9.0.115", null, flashvars, params, atts, $self.config.swfCallback);
 
       // Dirty hack to remove element from tab index for versions of firefox that trap focus in flash
-      if ($.browser.mozilla && (parseInt($.browser.version, 10) >= 2)) {
+      if (window.NOMENSA.browser.mozilla && (parseInt(window.NOMENSA.browser.version, 10) >= 2)) {
         $self.$html.find('object').attr("tabindex", '-1');
       }
     }, 0);

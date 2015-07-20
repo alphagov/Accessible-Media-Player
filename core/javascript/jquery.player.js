@@ -254,8 +254,8 @@ var html5_methods = {
 		* @NOTE: This is also being used to detect firefox 5 now as flash is also broken for this release
 		*----------------------------------------------*/
 		var isFirefox = function(){
-			if($.browser.mozilla){
-				return ( parseInt($.browser.version, 10) >= 2) ? true : false;
+			if(window.NOMENSA.browser.mozilla){
+				return ( parseInt(window.NOMENSA.browser.version, 10) >= 2) ? true : false;
 			}
 			return false;
 		};
@@ -270,8 +270,8 @@ var html5_methods = {
 			*---------------------------------------------------------*/
 			generatePlayerContainer : function() {
 				var $container = $('<'+this.config.playerContainer+' />').css(this.config.playerStyles).addClass('player-container');
-				if($.browser.msie){
-					$container.addClass('player-container-ie player-container-ie-'+$.browser.version.substring(0, 1));
+				if(window.NOMENSA.browser.msie){
+					$container.addClass('player-container-ie player-container-ie-'+window.NOMENSA.browser.version.substring(0, 1));
 				}
 				return $container;
 			},
