@@ -32,9 +32,9 @@ window.NOMENSA.player.MediaplayerDecorator.prototype.generatePlayerContainer = f
   var $container = $('<' + this.config.playerContainer + ' />')
     .css(this.config.playerStyles)
     .addClass('player-container');
-  if ($.browser.msie) {
+  if (window.NOMENSA.browser.msie) {
     $container.addClass('player-container-ie player-container-ie-'
-                        + $.browser.version.substring(0, 1));
+                        + window.NOMENSA.browser.version.substring(0, 1));
   }
 
   return $container;
