@@ -15,12 +15,9 @@ describe("jquery.player tests (integration)", function () {
     expect(document.querySelectorAll("#wrapper").length).toBe(1);
   });
 
-  it("should not call the YoutubePlayer constructor when using Vimeo", function () {
-    var videoLink, youtubeId;
-
-    videoLink = document.createElement("a");
-    videoLink.href = "http://vimeo.com/36579366";
-    youtubeId = videoLink.href.split("=")[1];
+  it("should not call the YoutubePlayer constructor when not using YouTube", function () {
+    var videoLink = document.createElement("a");
+    videoLink.href = "http://www.some-website.com/some-html5-video.mpg";
     wrapper.appendChild(videoLink);
     spyOn(window.NOMENSA.player, "YoutubePlayer");
     holder = $("<span></span>");
@@ -30,7 +27,7 @@ describe("jquery.player tests (integration)", function () {
     // Initialise the player.
     holder.player({
       id: 'youtube1',
-      media: youtubeId,
+      media: 'some-html5-video.mpg',
       url: videoLink.href
     });
 
