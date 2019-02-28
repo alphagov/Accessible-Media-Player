@@ -80,7 +80,7 @@ window.NOMENSA.player.YoutubePlayer.prototype = {
             firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
           }
         } else {
-          this.player = YT.Player('player-' + player.config.id, getOptions(player));
+          this.player = new YT.Player('player-' + this.config.id, this.getYTOptions());
         }
       };
     } else {
